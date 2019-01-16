@@ -1,0 +1,27 @@
+{{yield}}
+
+<button {{action "fetchParticipants"}} class="btn btn-sm btn-primary">View All</button>
+
+<div class="panel panel-info">
+  <br>
+  <div class="panel-heading">All Participants
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Address</th>
+          <th>Balance</th>
+
+        </tr>
+
+        {{#each-in this.participants as |addr bal|}}
+          <tr>
+                <td>{{addr}}</td>
+                <td>{{bal}}</td>
+          </tr>
+        {{/each-in}}
+
+      </table>
+    </div>
+  </div>
+
+</div>

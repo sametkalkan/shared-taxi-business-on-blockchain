@@ -1,0 +1,24 @@
+
+
+<div class="panel panel-success">
+  <div class="list-group">
+    <label type="button" class="list-group-item"><b>Your Address:</b> {{input type="text" value=this.your_address class="form-control"}} </label>
+    <label type="button" class="list-group-item"><b>Balance:</b> {{this.balance}}</label>
+    <p style="color:#FF0000">
+      {{#if addressError}}
+        {{addressError}}
+      {{/if}}
+    </p>
+
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button {{action "viewBalance"}} class="btn btn-sm btn-primary">View My Balance</button>
+        <button {{action "withdraw"}} class="btn btn-sm btn-primary" disabled={{if this.balance false true}}>Withdraw Balance</button>
+    </div>
+  </div>
+</div>
+
+
+{{outlet}}

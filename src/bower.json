@@ -1,0 +1,6 @@
+{
+  "name": "src",
+  "dependencies": {
+    "web3": "^0.20.6"
+  }
+}

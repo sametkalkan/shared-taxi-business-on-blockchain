@@ -1,0 +1,31 @@
+
+
+<div class="panel panel-success">
+  <div class="list-group">
+    <label type="button" class="list-group-item"><b>Your Address:</b> {{input type="text" value=this.your_address class="form-control"}}
+      <p style="color:#FF0000">
+      {{#if errorMessage}}
+      {{errorMessage}}
+      {{/if}}
+    </p>
+
+    </label>
+
+    <label type="button" class="list-group-item"><b>Participation Fee:</b> {{this.participationFee}}</label>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button {{action "join"}} class="btn btn-sm btn-primary">Join</button>
+    </div>
+
+    <p style="color:#FF0000">
+    {{#if joinedMessage}}
+        {{joinedMessage}}
+      {{/if}}
+    </p>
+  </div>
+</div>
+
+
+{{outlet}}

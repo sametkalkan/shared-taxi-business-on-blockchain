@@ -1,0 +1,22 @@
+
+
+<div class="panel panel-success">
+  <div class="list-group">
+    <label type="button" class="list-group-item"><b>Your Address:</b> {{input type="text" value=this.customer_address class="form-control"}} </label>
+    <label type="button" class="list-group-item"><b>Taxi Fare:</b> {{input type="text" value=this.ticket_fare class="form-control"}} </label>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p style="color:#FF0000">
+        {{#if addressError}}
+          {{addressError}}
+        {{/if}}
+      </p>
+      <button {{action "pay"}} class="btn btn-sm btn-primary">Pay Ticket</button>
+    </div>
+  </div>
+</div>
+
+
+{{outlet}}

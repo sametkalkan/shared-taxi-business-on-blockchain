@@ -1,0 +1,44 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+      {{#link-to "home"}}
+        <a class="nav-link active" href="#">Home</a>
+      {{/link-to}}
+  </li>
+  <li class="nav-item">
+      {{#link-to "viewBalance" }}
+        <a class="nav-link" href="#">Participant Panel</a>
+      {{/link-to}}
+  </li>
+
+  <li class="nav-item">
+      {{#link-to "participants-balance" }}
+        <a class="nav-link" href="#">Participants' Balance</a>
+      {{/link-to}}
+  </li>
+
+  <li class="nav-item">
+    {{#link-to "driver-panel" }}
+      <a class="nav-link" href="#">Driver Panel</a>
+    {{/link-to}}
+  </li>
+
+  <li class="nav-item">
+    {{#link-to "customer-payment" }}
+      <a class="nav-link" href="#">Customer Payment</a>
+    {{/link-to}}
+  </li>
+
+</ul>
+<div>
+  <br>
+  <b>Contract Address:</b> {{input type="text" value=contract_address class="form-control"}}
+
+  <p style="color:#FF0000">
+    {{#if contractError}}
+      {{contractError}}
+    {{/if}}
+  </p>
+
+</div>
+
+{{outlet}}

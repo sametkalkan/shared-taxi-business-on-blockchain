@@ -1,0 +1,69 @@
+
+<div class="panel panel-success">
+  <div class="list-group">
+    <label type="button" class="list-group-item"><b>CONTRACT BALANCE:</b> {{this.contractBalance}}</label>
+    <label type="button" class="list-group-item"><b>#PARTICIPANTS:</b> {{this.participantsNumber}}</label>
+    <label type="button" class="list-group-item"><b>MAX #PARTICIPANT:</b> {{this.maxParticipant}}</label>
+    <label type="button" class="list-group-item"><b>PARTICIPATION FEE:</b> {{this.participationFee}}</label>
+
+    <label type="button" class="list-group-item"><b>MAINTENANCE PRICE:</b> {{this.maintenancePrice}}</label>
+    <label type="button" class="list-group-item"><b>LAST MAINTENANCE:</b> {{this.lastMaintenance}}</label>
+    <label type="button" class="list-group-item"><b>LAST DIVIDEND:</b> {{this.lastDividend}}</label>
+    <!--<label type="button" class="list-group-item"><b>LAST SALARY PAID:</b> {{this.lastSalaryPaid}}</label>-->
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+
+      <br>
+
+      <button {{action "viewContract"}} class="btn btn-sm btn-primary">View Contract</button>
+
+      {{#link-to 'join'}}
+        <button class="btn btn-sm btn-primary">Join the Contract</button>
+      {{/link-to}}
+
+      <br><br>
+      <b>Manager Address:</b> {{input type="text" value=this.manager_address class="form-control"}}
+      <p style="color:#FF0000">
+        {{#if managerError}}
+          {{managerError}}
+        {{/if}}
+      </p>
+      <p style="color:#FF0000">
+        {{#if salaryError}}
+          {{salaryError}}
+        {{/if}}
+      </p>
+      <p style="color:#FF0000">
+        {{#if maintainError}}
+          {{maintainError}}
+        {{/if}}
+      </p>
+      <button {{action "payDividend"}} class="btn btn-sm btn-primary">Pay Dividend(of Participants)</button>
+      <button {{action "maintain"}} class="btn btn-sm btn-primary">Maintain Car</button>
+      <button {{action "paySalaryOfTaxiDriver"}} class="btn btn-sm btn-primary">Pay Salary(of Taxi Driver)</button>
+
+      <br><br>
+      <b>Set Car Dealer:</b> {{input type="text" value=carDealerAddress class="form-control"}}
+      <p style="color:#FF0000">
+        {{#if carDealerError}}
+          {{carDealerError}}
+        {{/if}}
+      </p>
+      <button {{action "setCarDealer"}} class="btn btn-sm btn-primary">Set</button>
+      <br><br>
+
+      <b>Set Taxi Driver:</b> {{input type="text" value=taxiDriverAddress class="form-control"}}
+      <p style="color:#FF0000">
+        {{#if taxiDriverError}}
+          {{taxiDriverError}}
+        {{/if}}
+      </p>
+      <button {{action "setTaxiDriver"}} class="btn btn-sm btn-primary">Set</button>
+
+
+    </div>
+  </div>
+</div>
+{{outlet}}
